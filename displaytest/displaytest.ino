@@ -8,9 +8,9 @@ void display(){
   lcd.begin(16,2);            
   lcd.clear();             
   lcd.setCursor(0,0);          
-  lcd.print("M");
-  lcd.setCursor(0,1);          
-  lcd.print("B"); 
+  lcd.print("KOTHA");
+  //lcd.setCursor(0,1);          
+  //lcd.print("B"); 
   }
 
 
