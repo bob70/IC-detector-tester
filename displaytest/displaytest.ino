@@ -37,6 +37,7 @@ void display(int a,int b){
     lcd.print("OK");
     }
   else{
+    //lcd.print("ERROR");
     lcd.print("ERROR");
     }
   }
