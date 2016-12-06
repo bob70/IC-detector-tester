@@ -11,13 +11,14 @@ void display(int a,int b){
   lcd.clear();                  // start with a blank screen
   lcd.setCursor(0,0);// set cursor to column 0, row 0 (the first row)
   switch(a) {
+      
       case 1 :
          lcd.print("AND 7408");
          break;
-      case 2 :
+	  case 2 :
          lcd.print("OR 7432");
          break;
-      case 3 :
+      case  3 :
          lcd.print("XOR 7486");
          break;
       case 4 :
@@ -28,17 +29,22 @@ void display(int a,int b){
          break;
       case 6 :
          lcd.print("XNOR 7466");
-         break; 
+         break;
+	  case 7:
+		  lcd.print("NO IC");
+		  break;
       default :
-         lcd.print("ERROR");
+         lcd.print("NO IC");
          }
   lcd.setCursor(0,1);           // set cursor to column 0, row 1
   if(b==2){
-    lcd.print("OK");
+    //lcd.print("OK");
+	  lcd.print("");
     }
   else{
     //lcd.print("ERROR");
-    lcd.print("ERROR");
+    //lcd.print("ERROR");
+	  lcd.print("");
     }
   }
 void dynamicinput(){
@@ -92,6 +98,7 @@ void andTest1(){
   int outp4=2;
   
   int i;
+  int noic[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   int andres[]={0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1};
   int orres[]={0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1};
   int xorres[]={0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0};
@@ -259,6 +266,9 @@ void andTest1(){
       }
  int k;
   int detect=0;
+
+
+
   for(k=0;k<16;k++){
     if(outTotal[k]!=andres[k]){
         break;
@@ -311,6 +321,16 @@ void andTest1(){
     else if(k==15){
         detect=6;
     }
+	
+	for (k = 0;k<16;k++) {
+		if (outTotal[k] != noic[k]) {
+			break;
+		}
+		else if (k == 15) {
+			detect = 7;
+		}
+	}
+
   }
 
     if(! detect==0){
@@ -342,4 +362,5 @@ andTest1();
  delay(1500);
 
 }
+
 
