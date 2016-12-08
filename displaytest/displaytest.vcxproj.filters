@@ -15,7 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="$safeprojectname$.ino" />
+    <None Include="displaytest.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.displaytest.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
